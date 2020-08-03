@@ -3,9 +3,9 @@ serverlessUrl = "https://www.zohoapis.com/crm/v2/functions/callable_function/act
 
 // Construct Parameters. Note: These must match the name and type of the parameters in the Serverless Function.
 parameters = Map();
-parameters.put("FIRST_NAME","Kurt");
-parameters.put("LAST_NAME","Volmar");
-parameters.put("EMAIL", "kurtvolmar@gmail.com");
+parameters.put("FIRST_NAME","Jane");
+parameters.put("LAST_NAME","Doe");
+parameters.put("EMAIL", "jane.doe@example.com");
 
 // Format the Parameters map to meet API's required parameters. Note: We arbitrarily use the words "entry" and "entries" to describe the formatted parameters.
 entries = list();
