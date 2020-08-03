@@ -1,0 +1,40 @@
+// Get the generated URL from the Serverless Function
+serverlessUrl = "https://www.zohoapis.com/crm/v2/functions/callable_function/actions/execute?auth_type=apikey&zapikey=1003.00715e94a0845f712efe9d4661c73d8b.1431ee69891b8d90aa91f1fefea7e4cc";
+
+// Construct Parameters. Note: These must match the name and type of the parameters in the Serverless Function.
+parameters = Map();
+parameters.put("FIRST_NAME","Kurt");
+parameters.put("LAST_NAME","Volmar");
+parameters.put("EMAIL", "kurtvolmar@gmail.com");
+
+// Format the Parameters map to meet API's required parameters. Note: We arbitrarily use the words "entry" and "entries" to describe the formatted parameters.
+entries = list();
+for each key in parameters.keys()
+{
+	entry = Map();
+	entry.put("paramName",key);
+	entry.put("content", parameters.get(key));
+	entry.put("stringPart", "true");
+	entries.add(entry);
+}
+
+// Call the serverless function. Note: The "files" field allows Lists to be submitted, where "parameters" only accepts Map objects.
+callServerlessFunction = invokeurl
+[
+	url: serverlessUrl
+	type: POST
+	files: entries
+];
+info callServerlessFunction;
+
+// Get Response Code from Serverless Function
+code = callServerlessFunction.get("code");
+
+// Check if Serverless Function call is successful.
+if(code == "success") {
+	// Get Details from the Serverless Functionc call. Includes output, output_type, and id.
+	details = callServerlessFunction.get("details");
+	
+	// Get the response output data from the Serverless Function
+	output = details.get("output");
+}
