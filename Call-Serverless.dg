@@ -1,5 +1,5 @@
 // Get the generated URL from the Serverless Function
-serverlessUrl = "https://www.zohoapis.com/crm/v2/functions/callable_function/actions/execute?auth_type=apikey&zapikey=1003.00715e94a0845f712efe9d4661c73d8b.1431ee69891b8d90aa91f1fefea7e4cc";
+serverlessUrl = "YOUR_FUNCTION_REST_API_URL_HERE";
 
 // Construct Parameters. Note: These must match the name and type of the parameters in the Serverless Function.
 parameters = Map();
